@@ -12,27 +12,27 @@
 
 ActiveRecord::Schema.define(version: 2020_08_26_214711) do
 
-  create_table "airplanes", force: :cascade do |t|
-    t.string "airline"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'airplanes', force: :cascade do |t|
+    t.string 'airline'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "flights", force: :cascade do |t|
-    t.integer "airplane_id", null: false
-    t.integer "passenger_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["airplane_id"], name: "index_flights_on_airplane_id"
-    t.index ["passenger_id"], name: "index_flights_on_passenger_id"
+  create_table 'flights', force: :cascade do |t|
+    t.integer 'airplane_id', null: false
+    t.integer 'passenger_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['airplane_id'], name: 'index_flights_on_airplane_id'
+    t.index ['passenger_id'], name: 'index_flights_on_passenger_id'
   end
 
-  create_table "passengers", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'passengers', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key "flights", "airplanes"
-  add_foreign_key "flights", "passengers"
+  add_foreign_key 'flights', 'airplanes'
+  add_foreign_key 'flights', 'passengers'
 end
